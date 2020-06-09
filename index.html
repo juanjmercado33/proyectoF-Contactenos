@@ -1,1 +1,246 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" 
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <title>Formulario de contacto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <!--esto es opcional son las fuentes de google que boy a utilizar -->
+    <link href="https://fonts.googleapis.com/css?family=Bellota&display=swap" rel="stylesheet">
+
+
+
+
+
+</head>
+
+
+<!--**********************************************************************************-->                
+<body  onload="startTime()" style="background-color:#f9f9fc;">
+    <div class="header">
+      <div class="header-left"> 
+        <center>
+        <img src="Imagenes/logo.png"  style="width:205px;height:88px;" >
+      </center>  
+    </div>
+    <div class="header-right">   
+    <h3 style="text-align:center; color: #f9f9fc;">ALUMNO: Juan Mercado</h3> 
+    <h3 style="text-align:center; color: #f9f9fc;">PROFESOR: Ezequiel Diaz</h3> 
+    </div>
+    <div class="header-C">   
+    <h1 style="text-align:center; color: #f9f9fc;" >Universidad del Istmo</h1> 
+    <h4 style="text-align:center; ">Contactenos</h4> 
+    </div>
+    </div>
+    
+    <!--**********************************************************************************--> 
+     
+
+
+
+
+<!--==============Menu Desplegable==================-->	
+
+<!--Elabore  un  sitio  Web  con  cuatro  secciones: 
+   inicio,  quienes somos,  productosy contáctenos.-->	
+
+
+   <nav class="navegacion">
+    <ul class="menu">
+  
+      <li class="first-item">
+        <a link href="Inicio.html">
+          <img src="Imagenes/Inicio.jpg" alt="" class="imagen">
+          <span class="text-item">Inicio</span>
+          <span class="down-item"></span>
+        </a>
+      </li>
+  
+      <li>
+          <a href="Quienes Somos.html">       
+          <img src="Imagenes/Quienes Somos.jpg" alt="" class="imagen">
+          <span class="text-item">Quienes Somos</span>
+          <span class="down-item"></span>
+        </a>
+      </li>
+  
+      <li>
+        <a href="Productos.html">
+          <img src="Imagenes/Productos.jpg" alt="" class="imagen">
+          <span class="text-item">Productos</span>
+          <span class="down-item"></span>
+        </a>
+      </li>
+  
+      <li>
+        <a href="contactenos.html"><img src="Imagenes/contactenos.jpg" alt="" class="imagen">
+          <span class="text-item">Contactenos</span>
+          <span class="down-item"></span>
+        </a>
+      </li>
+  
+  
+    </ul>
+  </nav>
+  <!--==============Menu Desplegable==================-->
+ 
+
+
+
+
+
+
+
+
+<!--==============Relog Fecha==================-->
+
+<div class="clockdate">
+    <span id="time"></span>
+    <span id="date"></span>
+  </div>
+  
+  <script>
+    function startTime() {
+        //declaramos las  variables que nos proporcionaran los datos como la hora, minutos etc.
+  
+        var today = new Date(),
+            hours = today.getHours(),
+            minutes = today.getMinutes(),
+            date = today.getDate(),
+            day = today.getDay(),
+            month = today.getMonth();
+  
+        //utilizaremos operadores ternarios esto nos ayudara a mostrar la hora solo del 1 al 12
+        hours = (hours == 0) ? 12 : hours;
+        hours = (hours > 12) ? hours - 12 : hours;
+  
+        //pasaremos las horas y minutos a una funcion que crearemos mas adelante
+        hours = checkTime(hours);
+        minutes = checkTime(minutes);
+  
+        //primero para los dias y meses crearemos un arreglo esto por que la funcion que nos debuelve
+        //los dias y meses nos los debuelbe en numero
+        var dia = ["Domingo", " Lunes", "Martes", "Miercoles", "Jueves", "viernes", "Sabado"],
+            mes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        //haora solo imprimimos los datos
+        var hr = document.getElementById('time').innerHTML = hours + ":" + minutes,
+            dt = document.getElementById('date').innerHTML = dia[day] + ", " + date + " De " + mes[month];
+  
+        //esta funcion hara que nuestro escript se ejecute constantemente
+        var time = setTimeout(function() {
+            startTime();
+        }, 500);
+  
+    }
+    //solo falta crear la funcion que nos diga si tine uno o dos dijitos
+    //esto para que si solo tiene uno le agrege u  cero a la izquierda
+    function checkTime(e) {
+        if (e < 10) {
+            e = "0" + e;
+        }
+        return e;
+    }
+  </script>
+  <!--==============Fin Relog Fecha==================-->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="contenedor">
+
+        <h1>Formulario Contacto</h1>
+
+        <div class="contenido">
+
+            <div class="info">
+
+                <div class="col">
+                    <i class="icono fas fa-map-marker-alt"></i>
+                    <p>Av. 26 de julio Nro. 8 Ciudad - País</p>
+                </div>
+
+                <div class="col">
+                    <i class="icono fas fa-envelope"></i>
+                    <p>consulta@correo.com</p>
+                </div>
+
+                <div class="col">
+                    <i class="icono fas fa-phone"></i>
+                    <p>(01) 6262-222 <br> (01) 3343-543</p>
+                </div>
+
+                <div class="redes-s">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                </div>
+
+            </div>
+
+            <form action="enviado.html" method="GET" class="formulario">
+
+                <input type="text" name="nombre" placeholder="Nombre" id="nombre">
+                <input type="text" name="correo" placeholder="Correo electróico" id="correo">
+                <input type="text" name="asunto" placeholder="Asunto" id="asunto">
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea>
+                <button type="button" onclick="validarFormulario()" >Enviar</button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
